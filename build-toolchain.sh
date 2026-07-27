@@ -31,12 +31,14 @@ export DOWNLOAD_DIR="${PWD}/download"
 export ROOT_DIR="${PWD}"
 export BUILD_DIR="${ROOT_DIR}/build"
 export SRC_DIR="${ROOT_DIR}/source"
+export STAMP_DIR="${ROOT_DIR}/.stamps"
 
 # Create main folders in the root
 mkdir -p ${INSTALL_DIR}
 mkdir -p ${BUILD_DIR}
 mkdir -p ${SRC_DIR}
 mkdir -p ${DOWNLOAD_DIR}
+mkdir -p ${STAMP_DIR}
 
 export PATH=$INSTALL_DIR/bin:$PATH
 
@@ -51,6 +53,7 @@ fi
 
 # Build GCC stage 1
 if [ ${BUILD_GCC_STAGE_1} == "yes" ]; then
+    export GCC_BUILD_PHASE=1
     ./gcc.sh
     if [ $? -ne 0 ]; then
         "Failed to build gcc stage 1, please check build.log"
@@ -67,6 +70,7 @@ if [ ${BUILD_NEWLIB} == "yes" ]; then
     else
         # Build GCC stage 2 (with newlib)
         if [ ${BUILD_GCC_STAGE_2} == "yes" ]; then
+            export GCC_BUILD_PHASE=2
             ./gcc.sh
             if [ $? -ne 0 ]; then
                 "Failed to build gcc stage 2, please check build.log"
@@ -76,5 +80,4 @@ if [ ${BUILD_NEWLIB} == "yes" ]; then
     fi
 fi
 
-
-echo "SH2 toolchain build was terminated"
+echo "SH2 toolchain build complete."

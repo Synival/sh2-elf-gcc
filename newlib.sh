@@ -10,6 +10,13 @@
 #Email         	:   kentosama@genku.net                                          
 ###################################################################
 
+# Don't build twice!
+STAMP_FILE="${STAMP_DIR}/newlib.done"
+if [ -f "${STAMP_FILE}" ]; then
+    echo "newlib already compiled; skipping."
+    exit
+fi
+
 VERSION="4.6.0.20260123"
 ARCHIVE="newlib-${VERSION}.tar.gz"
 URL="ftp://sourceware.org/pub/newlib/${ARCHIVE}"
@@ -74,3 +81,6 @@ make -j${NUM_PROC} 2<&1 | tee build.log
 if [ $? -eq 0 ]; then
     make install
 fi
+
+# Stamp!
+touch ${STAMP_FILE}

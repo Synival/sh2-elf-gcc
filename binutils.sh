@@ -10,6 +10,13 @@
 #Email         	:   kentosama@genku.net                                          
 ###################################################################
 
+# Don't build twice!
+STAMP_FILE="${STAMP_DIR}/binutils.done"
+if [ -f "${STAMP_FILE}" ]; then
+    echo "binutils already compiled; skipping."
+    exit
+fi
+
 VERSION="2.46.1"
 ARCHIVE="binutils-${VERSION}.tar.bz2"
 URL="https://ftp.gnu.org/gnu/binutils/${ARCHIVE}"
@@ -72,3 +79,6 @@ make -j${NUM_PROC} 2<&1 | tee build.log
 if [ $? -eq 0 ]; then
     make install -j${NUM_PROC}
 fi
+
+# Stamp!
+touch ${STAMP_FILE}

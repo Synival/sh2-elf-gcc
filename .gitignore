@@ -2,3 +2,5 @@ download
 source
 toolchain
 build
+.stamps
+sh2-toolchain

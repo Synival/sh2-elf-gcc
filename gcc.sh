@@ -11,6 +11,13 @@
 #Email         	:   kentosama@genku.net                                          
 ##################################################################
 
+# Don't build twice!
+STAMP_FILE="${STAMP_DIR}/gcc_${GCC_BUILD_PHASE}.done"
+if [ -f "${STAMP_FILE}" ]; then
+    echo "gcc (phase ${GCC_BUILD_PHASE}) already compiled; skipping."
+    exit
+fi
+
 VERSION="16.1.0"
 ARCHIVE="gcc-${VERSION}.tar.xz"
 URL="https://gcc.gnu.org/pub/gcc/releases/gcc-${VERSION}/${ARCHIVE}"
@@ -88,4 +95,5 @@ if [ $? -eq 0 ]; then
     make install-target-libgcc
 fi
 
-
+# Stamp!
+touch ${STAMP_FILE}
