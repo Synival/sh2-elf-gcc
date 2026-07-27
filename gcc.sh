@@ -2,17 +2,19 @@
 
 ###################################################################
 #Script Name	:   build-gcc                                                                                           
+
 #Description	:   build gcc for the SuperH2 toolchain   
 #Date           :   samedi, 4 avril 2020                                                                          
+#                   Updated 28. July 2026 (version 2.46.1)
 #Args           :   Welcome to the next level!                                                                                        
 #Author       	:   Jacques Belosoukinski (kentosama)                                                   
 #Email         	:   kentosama@genku.net                                          
 ##################################################################
 
-VERSION="9.3.0"
+VERSION="16.1.0"
 ARCHIVE="gcc-${VERSION}.tar.xz"
 URL="https://gcc.gnu.org/pub/gcc/releases/gcc-${VERSION}/${ARCHIVE}"
-SHA512SUM="4b9e3639eef6e623747a22c37a904b4750c93b6da77cf3958d5047e9b5ebddb7eebe091cc16ca0a227c0ecbd2bf3b984b221130f269a97ee4cc18f9cf6c444de"
+SHA512SUM="b3454958891ab47e1e5b6cb9396c0ad3b04f32fe2a7bf1153a143f21013fdb6b295ca94c98964698a688e4c1d7555ffd8ffbc20187507cce6b1c32cbcc09897a"
 DIR="gcc-${VERSION}"
 
 # Check if user is root

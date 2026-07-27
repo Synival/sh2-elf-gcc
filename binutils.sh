@@ -4,15 +4,16 @@
 #Script Name	:   build-binutils                                                                                            
 #Description	:   build binutils for the SuperH2 toolchain   
 #Date           :   samedi, 4 avril 2020                                                                          
+#                   Updated 28. July 2026 (version 2.46.1)
 #Args           :   Welcome to the next level!                                                                                        
 #Author       	:   Jacques Belosoukinski (kentosama)                                                   
 #Email         	:   kentosama@genku.net                                          
 ###################################################################
 
-VERSION="2.34"
+VERSION="2.46.1"
 ARCHIVE="binutils-${VERSION}.tar.bz2"
 URL="https://ftp.gnu.org/gnu/binutils/${ARCHIVE}"
-SHA512SUM="f47e7304e102c7bbc97958a08093e27796b9051d1567ce4fbb723d39ef3e29efa325ee14a1bdcc462a925a7f9bbbc9aee28294c6dc23850f371030f3835a8067"
+SHA512SUM="51b4c52981fa9720a15e28c3afe969713e5d7e53135bc7ae7b0039ba3d5ba977acc8ab205208f5e8b1aaa8a19c4c619dc2770d72cf4967ddf5f6d6e3b2c2c997"
 DIR="binutils-${VERSION}"
 
 # Check if user is root

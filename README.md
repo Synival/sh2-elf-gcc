@@ -41,7 +41,7 @@ cd sh2-elf-gcc
 Now, you can run **build-toolchain.sh** for start the build. The process should take approximately 15 min or several hours depending on your computer. **Please, don't run this script as root!**
 
 ```
-$ ./buid-toolchain.sh
+$ ./build-toolchain.sh
 ```
 
 ## Install
@@ -79,6 +79,6 @@ gcc version 9.3.0 (GCC)
 
 For backup, you can store the SH2 toolchain in external drive:
 ```bash
-$ tar -Jcvf sh2-gcc-9.3.0-toolchain.tar.xz sh2-toolchain
-$ mv sh2-gcc-9.3.0-toolchain.tar.xz /storage/toolchains/
+$ tar -Jcvf sh2-gcc-16.1.0-toolchain.tar.xz sh2-toolchain
+$ mv sh2-gcc-16.1.0-toolchain.tar.xz /storage/toolchains/
 ```

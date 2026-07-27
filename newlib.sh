@@ -4,15 +4,16 @@
 #Script Name	:   build-newlib                                                                                            
 #Description	:   build newlib for the SuperH2 toolchain   
 #Date           :   samedi, 4 avril 2020                                                                          
+#                   Updated 28. July 2026 (version 2.46.1)
 #Args           :   Welcome to the next level!                                                                                        
 #Author       	:   Jacques Belosoukinski (kentosama)                                                   
 #Email         	:   kentosama@genku.net                                          
 ###################################################################
 
-VERSION="3.3.0"
+VERSION="4.6.0.20260123"
 ARCHIVE="newlib-${VERSION}.tar.gz"
 URL="ftp://sourceware.org/pub/newlib/${ARCHIVE}"
-SHA512SUM="2f0c6666487520e1a0af0b6935431f85d2359e27ded0d01d02567d0d1c6479f2f0e6bbc60405e88e46b92c2a18780a01a60fc9281f7e311cfd40b8d5881d629c"
+SHA512SUM="ffa16d6465c0b429264c46395fa760fbcf072d3ff86e87330ba1f483efcfe66393ef83b03932759444a0ebeaef94d3ca58a59e91ab7b97b2a6ac6be2e7589657"
 DIR="newlib-${VERSION}"
 
 # Check if user is root
